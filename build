@@ -1,0 +1,8 @@
+#!/bin/bash
+echo "Pulling current alpine"
+echo "==================================================="
+docker pull alpine:latest
+echo "==================================================="
+echo "Building"
+echo "==================================================="
+docker build -t kiwichrish/alpine_lighttpd:latest .
