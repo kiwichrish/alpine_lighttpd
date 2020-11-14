@@ -1,6 +1,6 @@
 # Overview
 
-A small docker lighttpd alpine:latest to host simple statick files.
+A small docker lighttpd alpine:latest to host simple / static websites.
 
 Does not currently have https support turned on, although it exposes port 443 and you can modify the config if you want.
 
@@ -23,7 +23,7 @@ services:
       - "80:80"
       - "443:443"
     volumes:
-      - "./lighttpd-data:/var/www/localhost/htdocs"  # You probably only need this one for may things.
+      - "./lighttpd-data:/var/www/localhost/htdocs"  # You probably only need this one for most things.
       - "./lighttpd-etc:/etc/lighttpd"               # for non-default settings
       - "./lighttpd-logs:/var/log/lighttpd"          # Persistent logs uid/gid = 100:101 for logs
 </pre>
