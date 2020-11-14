@@ -9,6 +9,10 @@ If you connect a volume to the container for the lighttpd config that is empty t
 
 Modify the config as you want, and then if you re-start the container with the volume attached you'll get that config back.  Simple.
 
+e.g.: 
+
+docker run -d -v <path to wwwroot>:/var/www/localhost/htdocs -p80:80 kiwichrish/alpine_lighttpd:latest
+
 ## docker-compose
 
 <pre>
