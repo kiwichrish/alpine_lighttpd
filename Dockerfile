@@ -3,12 +3,15 @@
 
 FROM alpine:latest
 
-EXPOSE 80/tcp
-EXPOSE 443/tcp
+# common as the 1st layer in a few of my containers...
+RUN apk add --update --no-cache curl
 
-RUN apk add --update --no-cache lighttpd curl \
+RUN apk add --update --no-cache lighttpd \
     && mkdir /etc/lighttpd.dist \
     && mv /etc/lighttpd/* /etc/lighttpd.dist/
+
+EXPOSE 80/tcp
+EXPOSE 443/tcp
 
 ADD startup.sh /startup.sh
 ADD index.html /var/www/localhost/htdocs/index.html
